@@ -1,2 +1,2 @@
-# advent-of-code-2021
-Swift solutions to the advent of code 2021
+# swift-advent-of-code
+Swift playground solutions to the advent of code challenges.
