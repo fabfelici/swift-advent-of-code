@@ -3,7 +3,7 @@ func solve1(left: ClosedRange<Int>, right: ClosedRange<Int>) -> Bool {
 }
 
 func solve2(left: ClosedRange<Int>, right: ClosedRange<Int>) -> Bool {
-  !Set(left).intersection(right).isEmpty
+  left.overlaps(right)
 }
 
 let input = "day4".load()?.components(separatedBy: .newlines)
