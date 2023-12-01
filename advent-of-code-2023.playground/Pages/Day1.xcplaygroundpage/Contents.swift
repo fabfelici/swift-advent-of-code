@@ -4,13 +4,10 @@ let input = "day1".load()!
 
 func solve1(_ input: [String]) -> Int {
   input
-    .reduce(into: [Int]()) {
-      let onlyDigits = $1.filter { Int(String($0)) != nil }
-      let firstAndLast = (onlyDigits.first ?? "0", onlyDigits.last ?? "0")
-      let combined = Int(String(firstAndLast.0) + String(firstAndLast.1)) ?? 0
-      $0.append(combined)
+    .reduce(0) {
+      let digits = $1.compactMap { $0.wholeNumberValue }
+      return $0 + (digits.first ?? 0) * 10 + (digits.last ?? 0)
     }
-    .reduce(0, +)
 }
 
 solve1(input)
