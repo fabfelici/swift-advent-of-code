@@ -5,6 +5,11 @@ public extension String {
     return try? Bundle.main.url(forResource: self, withExtension: "txt")
       .flatMap(String.init(contentsOf:))
   }
+
+  func lines() -> [String] {
+    load()!.components(separatedBy: .newlines)
+      .filter { !$0.isEmpty }
+  }
 }
 
 public extension Array {
